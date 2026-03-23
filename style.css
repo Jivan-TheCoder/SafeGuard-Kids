@@ -213,7 +213,7 @@ header {
 }
 
 .hero-title {
-    font-size: 4.5rem; /* Slightly larger */
+    font-size: var(--h1-size);
     line-height: 1.1;
     margin-bottom: 1.5rem;
     color: #111827;
@@ -226,7 +226,7 @@ header {
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: var(--body-size);
     color: var(--text-muted);
     margin-bottom: 2.5rem;
     max-width: 540px;
