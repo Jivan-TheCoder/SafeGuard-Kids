@@ -27,6 +27,9 @@ $requiredKeywords = @(
     "WhatsApp Business",
     "Instagram Lite",
     "Stealth Mode",
+    "Call Tracking",
+    "Identify all Chat Contacts",
+    "AI Danger Detection",
     "Note:.*This app is only for child tracking"
 )
 
