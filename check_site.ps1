@@ -29,7 +29,7 @@ $requiredKeywords = @(
     "Stealth Mode",
     "Call Tracking",
     "Identify all Chat Contacts",
-    "AI Danger Detection",
+    "Upcoming updates will be shown",
     "Note:.*This app is only for child tracking"
 )
 
