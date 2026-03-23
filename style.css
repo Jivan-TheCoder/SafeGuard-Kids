@@ -900,9 +900,71 @@ header {
 }
 
 
+/* Powerful Features Section */
+.features-section {
+    padding: 6rem 1.5rem 2rem 1.5rem;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 4rem auto 0;
+}
+
+.feature-card {
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: left;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-color: #e2e8f0;
+}
+
+.feature-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.icon-purple { background-color: #8B5CF6; }
+.icon-orange { background-color: #F97316; }
+.icon-darkblue { background-color: #334155; }
+.icon-green { background-color: #10B981; }
+.icon-lightblue { background-color: #3B82F6; }
+.icon-pink { background-color: #EC4899; }
+
+.feature-card h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+    font-size: 0.875rem;
+    color: #6B7280;
+    line-height: 1.6;
+}
+
 /* Security & Privacy Section */
 .security-section {
-    padding: 8rem 1.5rem;
+    padding: 2rem 1.5rem 6rem 1.5rem;
     background-color: #fbfbfb;
     text-align: center;
 }
@@ -910,8 +972,8 @@ header {
 .security-tag {
     display: inline-block;
     padding: 0.5rem 1.25rem;
-    background-color: #ECFDF5;
-    color: #059669;
+    background-color: #D1FAE5;
+    color: #047857;
     border-radius: 9999px;
     font-size: 0.875rem;
     font-weight: 600;
@@ -978,6 +1040,7 @@ header {
     .steps-line { display: none; }
     
     .benefits-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
 }
 
 /* Footer */
