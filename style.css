@@ -4,21 +4,28 @@
     --primary-blue: #2563EB;
     --primary-light: #60A5FA;
     --primary-bg-light: #EFF6FF;
-    --text-dark: #1F2937;
-    --text-muted: #6B7280;
+    --text-dark: #111827;
+    --text-muted: #64748B;
     --bg-white: #FFFFFF;
     --border-color: #E5E7EB;
     --success-green: #10B981;
     --warning-red: #EF4444;
     --accent-blue: #3B82F6;
     --accent-pink: #EC4899;
+
+    /* Responsive Spacing & Typography */
+    --section-padding: clamp(4rem, 8vw, 8rem);
+    --h1-size: clamp(2.5rem, 5vw, 3.75rem);
+    --h2-size: clamp(2rem, 4vw, 2.5rem);
+    --h3-size: clamp(1.5rem, 3vw, 1.875rem);
+    --body-size: clamp(1rem, 0.5vw + 0.8rem, 1.125rem);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {
@@ -598,16 +605,16 @@ header {
 /* Sections Common */
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: var(--h1-size);
     margin-bottom: 1rem;
-    color: #111827;
+    color: var(--text-dark);
     line-height: 1.2;
 }
 
 .section-subtitle {
     text-align: center;
     color: var(--text-muted);
-    font-size: 1.125rem;
+    font-size: var(--body-size);
     max-width: 700px;
     margin: 0 auto 3.5rem;
     line-height: 1.6;
@@ -615,7 +622,7 @@ header {
 
 /* Platforms Section */
 .platforms {
-    padding: 8rem 1.5rem;
+    padding: var(--section-padding) 1.5rem;
 }
 
 .platform-grid {
@@ -660,7 +667,7 @@ header {
 
 /* How It Works Section */
 .how-it-works {
-    padding: 8rem 1.5rem;
+    padding: var(--section-padding) 1.5rem;
     background: #f8fafc;
 }
 
@@ -902,7 +909,7 @@ header {
 
 /* Powerful Features Section */
 .features-section {
-    padding: 8rem 1.5rem 4rem 1.5rem;
+    padding: var(--section-padding) 1.5rem;
     background-color: #ffffff;
     text-align: center;
 }
@@ -964,7 +971,7 @@ header {
 
 /* Security & Privacy Section */
 .security-section {
-    padding: 4rem 1.5rem;
+    padding: var(--section-padding) 1.5rem;
     background-color: #fbfbfb;
     text-align: center;
 }
@@ -1039,17 +1046,28 @@ header {
 @media (max-width: 968px) {
     .nav-links { display: none; }
     .hero { grid-template-columns: 1fr; text-align: center; }
-    .steps-container { flex-direction: column; gap: 4rem; }
+    .hero-content { align-items: center; }
+    .hero-feature { justify-content: center; }
+    
+    .steps-container { flex-direction: column; gap: 4rem; padding-top: 1rem; }
     .steps-line { display: none; }
+    .step-icon-wrap { width: 100px; height: 100px; }
+    .step-number { width: 30px; height: 30px; font-size: 0.875rem; }
     
     .benefits-grid { grid-template-columns: 1fr; }
     .features-grid { grid-template-columns: 1fr; }
-    .pricing-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+    .pricing-card.popular { transform: none !important; }
+    
+    .security-grid { grid-template-columns: 1fr; }
+    
+    .faq-question { padding: 1.5rem 2rem 1rem; }
+    .faq-answer { padding: 0 2rem 1.5rem; }
 }
 
 /* Pricing Section */
 .pricing-section {
-    padding: 5rem 1.5rem;
+    padding: var(--section-padding) 1.5rem;
     background-color: #f8fafc;
     text-align: center;
 }
@@ -1365,7 +1383,7 @@ header {
 
 /* FAQ Section */
 .faq-section {
-    padding: 8rem 0;
+    padding: var(--section-padding) 1.5rem;
     background-color: #f8fafc;
 }
 
@@ -1461,7 +1479,7 @@ header {
 
 /* Final CTA Section */
 .final-cta {
-    padding: 10rem 0;
+    padding: var(--section-padding) 1.5rem;
     background: #ffffff; /* Space between FAQ and CTA */
 }
 
@@ -1477,7 +1495,7 @@ header {
 }
 
 .cta-title {
-    font-size: 3rem;
+    font-size: var(--h1-size);
     font-weight: 800;
     margin-bottom: 1.5rem;
     color: white;
