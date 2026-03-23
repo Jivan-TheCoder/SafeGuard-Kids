@@ -1148,6 +1148,7 @@ header {
 
 .discount-label {
     display: inline-block;
+    align-self: flex-start;
     background: #dcfce7;
     color: #166534;
     padding: 0.25rem 0.75rem;
