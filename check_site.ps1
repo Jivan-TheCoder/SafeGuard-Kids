@@ -30,6 +30,9 @@ $requiredKeywords = @(
     "Call Tracking",
     "Identify all Chat Contacts",
     "Upcoming updates will be shown",
+    "Trusted by Parents Worldwide",
+    "Frequently Asked Questions",
+    "Is SafeGuard legal to use?",
     "Note:.*This app is only for child tracking"
 )
 
