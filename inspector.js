@@ -1,5 +1,5 @@
 /**
- * SafeGuard Precision Inspector (v1.5) - "Precision Ghost Mode"
+ * SafeGuard Precision Inspector (v1.6) - "Precision Ghost Mode"
  * Full-width subtle bands with dashed edges for perfect alignment.
  * NEW: Click labels to copy CSS properties to clipboard.
  */
@@ -70,12 +70,12 @@
         label.title = 'Click to copy CSS';
         label.innerText = labelText;
         
-        // Click to copy functionality (with file:// protocol fallback)
+        // Click to copy functionality (Rock-Solid Fallback for file://)
         label.onclick = (e) => {
             e.stopPropagation();
             const cssProp = getCSSProperty(labelText);
             
-            const success = () => {
+            const showSuccess = () => {
                 const originalText = label.innerText;
                 label.innerText = 'Copied!';
                 label.style.background = '#10B981';
@@ -85,21 +85,33 @@
                 }, 800);
             };
 
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(cssProp).then(success);
-            } else {
-                // Fallback for file:// protocol
+            const fallbackCopy = (text) => {
                 const textarea = document.createElement('textarea');
-                textarea.value = cssProp;
+                textarea.value = text;
+                // Ensure it's off-screen but part of the DOM
+                textarea.style.position = 'fixed';
+                textarea.style.left = '-9999px';
+                textarea.style.top = '0';
                 document.body.appendChild(textarea);
+                textarea.focus();
                 textarea.select();
                 try {
-                    document.execCommand('copy');
-                    success();
+                    const successful = document.execCommand('copy');
+                    if (successful) showSuccess();
+                    else console.error('ExecCommand copy failed');
                 } catch (err) {
-                    console.error('Copy failed', err);
+                    console.error('Fallback Copy Error:', err);
                 }
                 document.body.removeChild(textarea);
+            };
+
+            // Attempt modern clipboard API first, fallback immediately on error/denial
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(cssProp)
+                    .then(showSuccess)
+                    .catch(() => fallbackCopy(cssProp));
+            } else {
+                fallbackCopy(cssProp);
             }
         };
 

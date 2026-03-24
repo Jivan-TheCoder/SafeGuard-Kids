@@ -673,7 +673,7 @@ header {
 
 /* How It Works Section */
 .how-it-works {
-    padding: 2.5rem 1.5rem var(--section-padding); /* Adjusted top padding to 2.5rem as per feedback */
+    padding: 3rem 1.5rem 3rem; /* Adjusted both top and bottom to 3rem as requested */
     background: transparent;
 }
 
@@ -916,7 +916,7 @@ header {
 
 /* Powerful Features Section */
 .features-section {
-    padding: 5rem 1.5rem 2.5rem; /* Adjusted bottom padding to 2.5rem as per feedback */
+    padding: 5rem 1.5rem 3rem; /* Adjusted bottom padding to 3rem as requested */
     background-color: transparent; /* Removed background-color for testing as requested */
     text-align: center;
 }
@@ -978,7 +978,7 @@ header {
 
 /* Security & Privacy Section */
 .security-section {
-    padding: 2.5rem 1.5rem 2.5rem; /* Adjusted both top (prev) and bottom to 2.5rem */
+    padding: 3rem 1.5rem 3rem; /* Adjusted both top (per prev) and bottom to 3rem as requested */
     background-color: transparent;
     text-align: center;
 }
@@ -1053,7 +1053,7 @@ header {
 
 /* Pricing Section */
 .pricing-section {
-    padding: var(--section-padding) 1.5rem;
+    padding: 3rem 1.5rem 1rem; /* Adjusted top (3rem) and bottom (1rem) as requested */
     background-color: transparent;
     text-align: center;
 }
@@ -1592,7 +1592,7 @@ header {
 
 /* Testimonials Section */
 .testimonials-section {
-    padding: 8rem 0;
+    padding: 6rem 0 3rem; /* Reduced top to 6rem, and bottom to 3rem as requested */
     background-color: transparent;
     text-align: center;
 }
@@ -1667,7 +1667,7 @@ header {
 
 /* FAQ Section */
 .faq-section {
-    padding: var(--section-padding) 1.5rem;
+    padding: 3rem 1.5rem 3rem; /* Adjusted top (3rem) and bottom (3rem) as requested */
     background-color: transparent;
 }
 
@@ -1763,7 +1763,7 @@ header {
 
 /* Final CTA Section */
 .final-cta {
-    padding: var(--section-padding) 1.5rem;
+    padding: 3rem 1.5rem 3rem; /* Adjusted top (3rem) and bottom (3rem) as requested */
     background: transparent; /* Removed white background from reference image */
 }
 
@@ -1849,7 +1849,7 @@ header {
 
 /* Legal Disclaimer Section - Brand-Approved Restoration */
 .disclaimer {
-    padding: 5rem 1.5rem 3rem; /* Balanced top and bottom gaps */
+    padding: 3rem 1.5rem 3rem; /* Adjusted top padding to 3rem as requested */
     text-align: center;
 }
 
