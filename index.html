@@ -28,6 +28,13 @@
                     <span class="live-dot"></span>
                     Get Started
                 </a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12" class="line-1"></line>
+                        <line x1="3" y1="6" x2="21" y2="6" class="line-2"></line>
+                        <line x1="3" y1="18" x2="21" y2="18" class="line-3"></line>
+                    </svg>
+                </button>
             </div>
         </div>
     </header>
@@ -435,6 +442,15 @@
                             <path d="M826 100 L834 110 L842 100" fill="#2563EB" stroke="#2563EB" stroke-width="2" stroke-linejoin="round"/>
                         </svg>
                     </div>
+
+                    <!-- Mobile Vertical Logic -->
+                    <div class="steps-line-vertical">
+                        <svg width="40" height="100%" viewBox="0 0 40 600" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 10 V590" stroke="#F1F5F9" stroke-width="8" stroke-linecap="round"/>
+                            <path class="pulse-line pulse-phase-1" d="M20 10 V300" stroke="url(#flow-gradient)" stroke-width="4" stroke-linecap="round"/>
+                            <path class="pulse-line pulse-phase-2" d="M20 300 V590" stroke="url(#flow-gradient)" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <div class="step-item">
                         <div class="step-icon-wrap">
                             <!-- Purple Person Icon -->
@@ -775,5 +791,6 @@
         })();
     </script>
     <script src="inspector.js"></script>
+    <script src="mobile.js"></script>
 </body>
 </html>
