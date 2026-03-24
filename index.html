@@ -410,17 +410,27 @@
                 
                 <div class="steps-container">
                     <div class="steps-line">
-                        <svg width="100%" height="100" viewBox="0 0 1000 100" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Top Horizontal Bar -->
-                            <path d="M166 10 H834" stroke="#94A3B8" stroke-width="5" stroke-linecap="round"/>
-                            <!-- Vertical Drops -->
-                            <path d="M166 10 V70" stroke="#94A3B8" stroke-width="5" stroke-linecap="round"/>
-                            <path d="M500 10 V70" stroke="#94A3B8" stroke-width="5" stroke-linecap="round"/>
-                            <path d="M834 10 V70" stroke="#94A3B8" stroke-width="5" stroke-linecap="round"/>
-                            <!-- Bold Arrow Heads (Lowered for visibility) -->
-                            <path d="M154 58 L166 70 L178 58" stroke="#94A3B8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M488 58 L500 70 L512 58" stroke="#94A3B8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M822 58 L834 70 L846 58" stroke="#94A3B8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg width="100%" height="120" viewBox="0 0 1000 120" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="flow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#2563EB" />
+                                    <stop offset="50%" stop-color="#7C3AED" />
+                                    <stop offset="100%" stop-color="#2563EB" />
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Premium Background "Track" -->
+                            <path d="M166 110 V50 Q166 30 196 30 H804 Q834 30 834 50 V110" stroke="#F1F5F9" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M500 30 V110" stroke="#F1F5F9" stroke-width="8" stroke-linecap="round"/>
+                            
+                            <!-- Animated Digital Pulse Layer -->
+                            <path class="pulse-line" d="M166 110 V50 Q166 30 196 30 H804 Q834 30 834 50 V110" stroke="url(#flow-gradient)" stroke-width="4" stroke-linecap="round"/>
+                            <path class="pulse-line" d="M500 30 V110" stroke="url(#flow-gradient)" stroke-width="4" stroke-linecap="round"/>
+
+                            <!-- High-Fidelity Solid Arrow Pointers (Target Baseline y=110) -->
+                            <path d="M158 100 L166 110 L174 100" fill="#2563EB" stroke="#2563EB" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M492 100 L500 110 L508 100" fill="#7C3AED" stroke="#7C3AED" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M826 100 L834 110 L842 100" fill="#2563EB" stroke="#2563EB" stroke-width="2" stroke-linejoin="round"/>
                         </svg>
                     </div>
                     <div class="step-item">
