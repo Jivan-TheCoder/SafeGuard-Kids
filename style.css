@@ -93,11 +93,11 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.85); /* Slightly more transparent */
+    backdrop-filter: blur(16px); /* Stronger blur for premium glass feel */
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03); /* Whisper-thin border */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Nav Bar */
@@ -130,9 +130,9 @@ header {
 
 .logo-text {
     font-weight: 800;
-    font-size: clamp(1.1rem, 4vw, 1.35rem);
+    font-size: clamp(1.1rem, 4vw, 1.3rem);
     color: #111827;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.04em; /* Tighter for a more premium look */
     white-space: nowrap;
 }
 
@@ -314,17 +314,29 @@ header {
 }
 
 .nav-links a {
-    color: var(--text-dark);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: var(--transition-base);
-    opacity: 0.8;
+    color: #4b5563;
+    font-weight: 700;
+    font-size: 0.8125rem; /* Sophisticated smaller size */
+    text-transform: uppercase; /* Agency-style premium look */
+    letter-spacing: 0.1em; /* WIDER tracking for elegance */
+    padding: 0.6rem 1.1rem;
+    border-radius: 100px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    opacity: 1;
 }
 
 .nav-links a:hover {
     color: var(--primary-blue);
-    opacity: 1;
+    background: rgba(37, 99, 235, 0.08); /* Ghost Pill Effect */
+}
+
+.nav-links a.active {
+    color: var(--primary-blue);
+    background: rgba(37, 99, 235, 0.08);
 }
 
 .nav-actions {
@@ -2191,3 +2203,75 @@ header {
 }
 
 .sg-label-type-margin { background: rgba(249, 115, 22, 0.9); }
+
+/* Custom Select Dropdown */
+.custom-select-wrapper {
+    position: relative;
+    user-select: none;
+}
+
+.custom-select-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.custom-select-trigger:hover,
+.custom-select-wrapper.open .custom-select-trigger {
+    border-color: var(--primary-blue);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.05);
+}
+
+.custom-select-wrapper.open .custom-options {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.custom-options {
+    position: absolute;
+    top: calc(100% + 8px); /* Reduced gap for a tighter feel */
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98); /* Less transparent for clarity */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 20px;
+    border: 2px solid rgba(37, 99, 235, 0.1); /* Added a subtle support-blue border */
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1000;
+    overflow: hidden;
+    padding: 0.6rem;
+}
+
+.custom-option {
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.custom-option:hover {
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--primary-blue);
+    padding-left: 1.5rem;
+}
+
+.custom-option.selected {
+    background: var(--primary-blue);
+    color: white;
+}
