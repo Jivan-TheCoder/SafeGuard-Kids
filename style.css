@@ -716,9 +716,32 @@ header {
 }
 
 .pulse-line {
-    stroke-dasharray: 20 80; /* Elegant, spaced-out pulses */
-    animation: energy-flow 4s linear infinite;
-    filter: drop-shadow(0 0 5px rgba(37, 99, 235, 0.5));
+    stroke-dasharray: 40 441; /* "Small Line" pulse (40px) on 481px path */
+    filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.8));
+    stroke-width: 4;
+    stroke-dashoffset: 481; /* Default hidden */
+}
+
+@keyframes leg-1-flow {
+    0% { stroke-dashoffset: 481; }
+    25% { stroke-dashoffset: 0; } /* Travels Step 1 -> Step 2 T-junction */
+    50% { stroke-dashoffset: -481; } /* Completion at Step 2 bottom */
+    100% { stroke-dashoffset: -481; } /* Wait */
+}
+
+@keyframes leg-2-flow {
+    0% { stroke-dashoffset: 481; }
+    50% { stroke-dashoffset: 481; } /* Wait for Leg 1 */
+    75% { stroke-dashoffset: 0; } /* Travels Step 2 center -> Step 3 down */
+    100% { stroke-dashoffset: -481; } /* Completion at Step 3 */
+}
+
+.pulse-phase-1 {
+    animation: leg-1-flow 6s linear infinite;
+}
+
+.pulse-phase-2 {
+    animation: leg-2-flow 6s linear infinite;
 }
 
 .step-item {

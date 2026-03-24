@@ -423,9 +423,11 @@
                             <path d="M166 110 V50 Q166 30 196 30 H804 Q834 30 834 50 V110" stroke="#F1F5F9" stroke-width="8" stroke-linecap="round"/>
                             <path d="M500 30 V110" stroke="#F1F5F9" stroke-width="8" stroke-linecap="round"/>
                             
-                            <!-- Animated Digital Pulse Layer -->
-                            <path class="pulse-line" d="M166 110 V50 Q166 30 196 30 H804 Q834 30 834 50 V110" stroke="url(#flow-gradient)" stroke-width="4" stroke-linecap="round"/>
-                            <path class="pulse-line" d="M500 30 V110" stroke="url(#flow-gradient)" stroke-width="4" stroke-linecap="round"/>
+                            <!-- Pro "Sequential Loop" (2-Phase Architecture) -->
+                            <!-- Phase 1: Step 1 -> Step 2 -->
+                            <path class="pulse-line pulse-phase-1" d="M166 110 V60 Q166 30 196 30 H500 V110" stroke="url(#flow-gradient)" stroke-width="4" stroke-linecap="round"/>
+                            <!-- Phase 2: Step 2 -> Step 3 -->
+                            <path class="pulse-line pulse-phase-2" d="M500 110 V30 H804 Q834 30 834 60 V110" stroke="url(#flow-gradient)" stroke-width="4" stroke-linecap="round"/>
 
                             <!-- High-Fidelity Solid Arrow Pointers (Target Baseline y=110) -->
                             <path d="M158 100 L166 110 L174 100" fill="#2563EB" stroke="#2563EB" stroke-width="2" stroke-linejoin="round"/>
