@@ -32,7 +32,7 @@ $requiredKeywords = @(
     "Upcoming updates will be shown",
     "Trusted by Parents Worldwide",
     "Frequently Asked Questions",
-    "Is SafeGuard legal to use?",
+    "Is the monitoring app legal to use\?",
     "Note:.*This app is only for child tracking"
 )
 
@@ -44,8 +44,31 @@ foreach ($keyword in $requiredKeywords) {
     }
 }
 
-# 3. Verify Sticky Header
+# 3. Verify Responsive Meta Tag
+if ($content -match '<meta\s+name="viewport"\s+content="width=device-width,\s*initial-scale=1\.0">') {
+    Write-Host "[PASS] Responsive viewport meta tag detected." -ForegroundColor Green
+} else {
+    Write-Host "[FAIL] Missing or incorrect viewport meta tag!" -ForegroundColor Red
+}
+
+# 4. Verify Professional CSS Architecture
 $cssContent = Get-Content $cssFile -Raw
+
+# Check for Fluid Typography/Spacing
+if ($cssContent -match "clamp\(" -and $cssContent -match "--h1-size") {
+    Write-Host "[PASS] Fluid typography (clamp) and CSS variables detected." -ForegroundColor Green
+} else {
+    Write-Host "[FAIL] Fluid typography or root variables missing!" -ForegroundColor Red
+}
+
+# Check for Grid Stacking Overrides
+if ($cssContent -match "grid-template-columns:\s*1fr\s*!important") {
+    Write-Host "[PASS] Professional grid stacking overrides (1fr !important) detected." -ForegroundColor Green
+} else {
+    Write-Host "[FAIL] Grid stacking overrides for mobile missing!" -ForegroundColor Red
+}
+
+# 5. Verify Sticky Header
 if ($cssContent -match "header\s*\{[^}]*position:\s*sticky" -and $cssContent -match "backdrop-filter:\s*blur") {
     Write-Host "[PASS] Sticky header with glassmorphism detected." -ForegroundColor Green
 } else {
