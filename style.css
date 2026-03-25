@@ -2515,6 +2515,12 @@ section[id] {
     .nav-links { gap: 1.5rem; }
 }
 
+/* Badge Float Animation (Restored - was deleted during SVG purge) */
+@keyframes float-nudge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
 @media (max-width: 768px) {
     /* Header (Zero-Overlap Pro Restoration) */
     header {
@@ -2591,6 +2597,41 @@ section[id] {
         line-height: 1.6 !important;
     }
 
+    /* Center all hero icons and social proof on mobile */
+    .hero-features {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+    }
+
+    .hero-feature {
+        justify-content: center !important;
+    }
+
+    .hero-cta-group {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .social-proof {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .avatars {
+        justify-content: center !important;
+    }
+
+    .rating {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
     /* Bypass JS Scroll Animations on Mobile (Fixes "Blank" sections) */
     .animate-up:not(.alert-badge) {
         opacity: 1 !important;
@@ -2602,7 +2643,6 @@ section[id] {
     /* Tooltip & Animation Integrity (Restored) */
     .cta-hook {
         left: 50% !important;
-        transform: translateX(-50%) !important;
         width: 280px !important;
         max-width: 85vw !important;
         white-space: normal !important;
@@ -2612,6 +2652,8 @@ section[id] {
         background: var(--primary-blue) !important;
         color: white !important;
         border-radius: 50px !important;
+        margin-left: -140px !important; /* Center without transform to preserve animation */
+        animation: float-nudge 3s ease-in-out infinite !important; /* Force animation */
     }
 
     .hero-visual {
@@ -2634,14 +2676,6 @@ section[id] {
         padding: 6px 10px !important;
         width: auto !important;
         max-width: 200px !important;
-        animation: floatBadge 3s ease-in-out infinite !important; /* Guaranteed float animation */
-    }
-
-    /* Guaranteed card margins for stats */
-    .stats-board {
-        width: auto !important; /* Disable 100% stretch */
-        margin: 0 1.5rem !important; /* Perfect side margins like other cards */
-        box-sizing: border-box !important;
     }
 
     /* Bottom CTA (12px Rounded & Vertical) (Restored) */
@@ -2673,14 +2707,28 @@ section[id] {
         display: none !important; /* Hide the divider dots */
     }
 
+    /* Center feature card icons on mobile */
+    .feature-card {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .feature-icon-box {
+        margin: 0 auto 1.25rem !important; /* Center + bottom breathing room */
+    }
+
     /* THE VERTICAL STACK GUARANTEE (High Specificity Individual Rules) */
     .stats {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         gap: 2.5rem !important;
-        width: 100% !important;
-        padding: 3rem 1rem !important;
+        width: auto !important; /* Allow margins to work - width:100% was stretching edge-to-edge */
+        margin: 0 1.5rem !important; /* Visible side margins matching other cards */
+        padding: 3rem 1.5rem !important;
+        box-sizing: border-box !important;
     }
 
     .stat-grid, .stats-board, .security-stats {
