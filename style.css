@@ -13,12 +13,12 @@
     --accent-blue: #3B82F6;
     --accent-pink: #EC4899;
 
-    /* Professional Responsive Scales */
-    --section-padding: clamp(4rem, 10vw, 8rem);
-    --h1-size: clamp(2.25rem, 6vw, 3.75rem);
-    --h2-size: clamp(1.875rem, 5vw, 2.5rem);
-    --h3-size: clamp(1.25rem, 4vw, 1.875rem);
-    --body-size: clamp(1rem, 0.5vw + 0.85rem, 1.125rem);
+    /* Professional Responsive Scales (Zero-Bug Update) */
+    --section-padding: clamp(3rem, 10vw, 8rem);
+    --h1-size: clamp(1.75rem, 6vw, 3.75rem);
+    --h2-size: clamp(1.5rem, 5vw, 2.5rem);
+    --h3-size: clamp(1.15rem, 4vw, 1.875rem);
+    --body-size: clamp(0.95rem, 0.5vw + 0.85rem, 1.125rem);
 }
 
 * {
@@ -2505,9 +2505,9 @@ header {
    MOBILE RESPONSIVENESS (TOP CLASS - PRECISION FIXES)
    ========================================================================== */
 
-/* Anti-Cutting Scroll Margin (Precision Reinforced - SafePro) */
+/* Anti-Cutting Scroll Margin (Definitive Precision - 260px) */
 section[id] {
-    scroll-margin-top: 240px !important;
+    scroll-margin-top: 260px !important;
 }
 
 /* Hide mobile elements by default */
@@ -2572,14 +2572,6 @@ section[id] {
         visibility: visible;
         opacity: 1;
         pointer-events: all;
-    }
-
-    .nav-links.active {
-        display: flex; /* Show only when active */
-        right: 0;
-        visibility: visible;
-        pointer-events: all;
-        opacity: 1;
     }
 
     .nav-links a {
@@ -2690,8 +2682,8 @@ section[id] {
         padding: 1.5rem;
         border-radius: 20px;
         width: 100%;
-        max-width: 340px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Added for 'Top Class' visibility */
+        max-width: 100%; /* Total fluidity */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     }
 
     /* Pricing Section (No Overlap) */
@@ -2704,8 +2696,16 @@ section[id] {
 
     .pricing-card {
         margin: 0 auto;
-        width: 100%;
-        max-width: 350px;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Force all feature items and cards to be strictly fluid */
+    .platform-card, .security-card, .faq-item, .benefit-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 
     /* Inner Pages (Privacy, About, Contact) */
