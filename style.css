@@ -2524,10 +2524,11 @@ section[id] {
         background: white;
         z-index: 2005;
         border-bottom: 1px solid #F1F5F9;
+        padding: 2.5rem 0 1.75rem !important; /* Perfect breathing for notch and content separation */
     }
 
     .nav-bar { 
-        padding: 1.5rem 0 0 !important; /* Breathing room for logo */
+        padding: 0 !important;
         display: flex !important;
         flex-direction: column !important; /* Stacked as per User Visual */
         align-items: center !important;
@@ -2535,7 +2536,7 @@ section[id] {
     }
 
     .logo {
-        margin-bottom: 1rem !important;
+        margin-bottom: 1.5rem !important;
     }
 
     .nav-links, .mobile-toggle { 
@@ -2555,21 +2556,21 @@ section[id] {
 
     /* Hero (Zero-Overlap Pro Restoration) */
     .hero {
-        padding-top: 2.5rem !important; /* Header is now relative, only minimal breathing needed */
+        padding-top: 2.5rem !important; /* Header is now relative */
         text-align: center;
         height: auto !important;
         min-height: auto !important;
     }
 
     .hero-title {
-        font-size: 2.25rem !important; /* Restored to Top Class scale */
+        font-size: 2.25rem !important;
         line-height: 1.15 !important;
         margin-bottom: 1.5rem !important;
     }
 
     /* Hero Subtitle & Body Text (Fluidity & Symmetrical Breathing) */
     .hero-subtitle, .section-subtitle, .benefit-text p {
-        padding: 0 1.5rem !important; /* Balanced side breathing to prevent cutting */
+        padding: 0 1.5rem !important;
         margin: 0 auto 1.5rem !important;
         max-width: 100% !important;
         line-height: 1.6 !important;
@@ -2583,65 +2584,7 @@ section[id] {
         transition: none !important;
     }
 
-    /* Global Vertical Stacking (STRICT Fix for 2x2 stats board regression) */
-    .stats, .stat-grid, .security-stats, .stats-board, .cta-hook, .hero-features, .social-proof {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 1.5rem !important; /* Professional space-efficient gap */
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-
-    .stat-item, .stat-card, .hero-feature {
-        width: 100% !important;
-        max-width: 100% !important;
-        text-align: center !important;
-    }
-
-    .stat-item h3, .stat-number { font-size: 2.25rem !important; margin-bottom: 0.5rem !important; }
-    .stat-item span, .stat-label { font-size: 0.95rem !important; color: #64748B !important; }
-
-    /* Full Site Grid Restoration (1-Column Guarantee) */
-    .benefits-grid, .features-grid, .pricing-grid, .testimonials-grid, .faq-grid, .platform-grid {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 3.5rem !important;
-        width: 100% !important;
-        padding: 2.5rem 0 !important;
-    }
-
-    .benefit-card, .feature-card, .pricing-card, .testimonial-card, .faq-item, .platform-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        display: block !important;
-    }
-
-    /* Fix How It Works (Broke the Space Loop) */
-    .steps-container {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 4rem !important;
-        height: auto !important;
-    }
-
-    .step-item {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 2.5rem 1.5rem !important;
-        height: auto !important;
-    }
-
-    .steps-line, .steps-line-vertical, .how-it-works-connector, .line-svg { 
-        display: none !important; 
-        height: 0 !important; 
-        visibility: hidden !important;
-    }
-
-    /* Tooltip & Animation Integrity */
+    /* Tooltip & Animation Integrity (Restored) */
     .cta-hook {
         left: 50% !important;
         transform: translateX(-50%) !important;
@@ -2670,13 +2613,15 @@ section[id] {
     }
 
     .alert-badge {
-        right: 30px !important;
+        right: 20px !important; /* Adjusted to 20px to prevent clipping */
         top: 10px !important;
         font-size: 0.7rem !important;
         padding: 6px 10px !important;
+        width: auto !important;
+        max-width: 200px !important;
     }
 
-    /* Bottom CTA (12px Rounded & Vertical) */
+    /* Bottom CTA (12px Rounded & Vertical) (Restored) */
     .cta-actions {
         display: flex !important;
         flex-direction: column !important;
@@ -2687,31 +2632,75 @@ section[id] {
 
     .cta-actions .btn {
         width: 100% !important;
-        border-radius: 12px !important;
+        border-radius: 12px !important; /* Match top button radius */
         padding: 1.15rem !important;
         font-size: 1rem !important;
     }
 
-    .container {
-        padding: 0 1.5rem !important;
-        max-width: 100% !important;
-        overflow: visible !important;
+    .cta-trust-badges {
+        display: flex !important;
+        flex-direction: column !important; /* Stack vertically */
+        align-items: center !important;
+        gap: 0.5rem !important;
+        margin-top: 1.5rem !important;
+        padding: 0 !important;
+    }
+
+    .cta-trust-badges .dot {
+        display: none !important; /* Hide the divider dots */
+    }
+
+    /* THE VERTICAL STACK GUARANTEE (High Specificity Individual Rules) */
+    .stats {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2.5rem !important;
         width: 100% !important;
+        padding: 3rem 1rem !important;
+    }
+
+    .stat-grid, .stats-board, .security-stats {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        width: 100% !important;
+    }
+
+    .benefits-grid, .features-grid, .pricing-grid, .testimonials-grid, .faq-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 3.5rem !important;
+        width: 100% !important;
+    }
+
+    .stat-item, .stat-card, .benefit-card, .feature-card, .pricing-card, .testimonial-card, .faq-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        text-align: center !important;
+    }
+
+    .stat-item h3, .stat-number { font-size: 2.25rem !important; margin-bottom: 0.5rem !important; }
+
+    /* Fix How It Works (Solve 18,000px height loop) */
+    .steps-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4rem !important;
         height: auto !important;
     }
 
-    .footer-grid {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        text-align: center;
-        gap: 3.5rem !important;
+    .steps-line, .steps-line-vertical, .how-it-works-connector, .line-svg,
+    .bg-decoration, .pricing-decoration, .shape-blob, .decoration-blob { 
+        display: none !important; 
+        height: 0 !important; 
+        width: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
     }
 
-    .footer-section { align-items: center !important; }
-
-    .inner-page-header { padding-top: 10rem !important; }
-
-    /* Space-Utilization: Start Protecting Your Children Today (Zero Congestion) */
+    /* Space-Utilization: Start Protecting (Zero Congestion) */
     .cta-section {
         width: 100vw !important;
         position: relative !important;
@@ -2721,41 +2710,16 @@ section[id] {
         margin-right: -50vw !important;
     }
 
-    .cta-section .container {
-        padding: 0 !important;
-        max-width: 100% !important;
-        width: 100% !important;
-        margin: 0 !important;
-    }
-
     .cta-box {
         width: 100% !important;
         max-width: 100% !important;
         padding: 4rem 1.5rem !important;
-        border-radius: 0 !important; /* Edge-to-edge utilized space */
+        border-radius: 24px !important; /* Soft circular corner restoration */
         margin: 0 !important;
     }
 
     .cta-title {
         font-size: 2.25rem !important;
         margin-bottom: 1.5rem !important;
-    }
-
-    /* Nuclear Height Loop Fix (Solve 18,000px bug) */
-    .steps-line, .steps-line-vertical, .how-it-works-connector, .line-svg, 
-    .bg-decoration, .pricing-decoration, .shape-blob, .decoration-blob { 
-        display: none !important; 
-        height: 0 !important; 
-        width: 0 !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-    }
-
-    main, section, div {
-        max-height: none !important;
-    }
-
-    header {
-        padding: 2.5rem 0 1.75rem !important; /* Perfect breathing for notch and content separation */
     }
 }
