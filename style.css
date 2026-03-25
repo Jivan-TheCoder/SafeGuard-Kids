@@ -2524,11 +2524,11 @@ section[id] {
         background: white;
         z-index: 2005;
         border-bottom: 1px solid #F1F5F9;
-        padding: 2.5rem 0 1.75rem !important; /* Perfect breathing for notch and content separation */
+        padding: 1.5rem 0 1rem !important; /* Tightened breathing room for elegant proportions */
     }
 
     .nav-bar { 
-        padding: 0 !important;
+        padding: 0 1.5rem !important; /* Added side padding so button breathes from edges */
         display: flex !important;
         flex-direction: column !important; /* Stacked as per User Visual */
         align-items: center !important;
@@ -2536,7 +2536,22 @@ section[id] {
     }
 
     .logo {
-        margin-bottom: 1.5rem !important;
+        margin-bottom: 1rem !important; /* Tightened gap between logo and button */
+    }
+
+    .logo-icon {
+        width: 48px !important;
+        height: 48px !important;
+        border-radius: 14px !important;
+    }
+    
+    .logo-icon svg {
+        width: 26px !important;
+        height: 26px !important;
+    }
+
+    .logo-text {
+        font-size: 1.75rem !important;
     }
 
     .nav-links, .mobile-toggle { 
@@ -2577,7 +2592,7 @@ section[id] {
     }
 
     /* Bypass JS Scroll Animations on Mobile (Fixes "Blank" sections) */
-    .animate-up {
+    .animate-up:not(.alert-badge) {
         opacity: 1 !important;
         transform: none !important;
         visibility: visible !important;
@@ -2619,6 +2634,14 @@ section[id] {
         padding: 6px 10px !important;
         width: auto !important;
         max-width: 200px !important;
+        animation: floatBadge 3s ease-in-out infinite !important; /* Guaranteed float animation */
+    }
+
+    /* Guaranteed card margins for stats */
+    .stats-board {
+        width: auto !important; /* Disable 100% stretch */
+        margin: 0 1.5rem !important; /* Perfect side margins like other cards */
+        box-sizing: border-box !important;
     }
 
     /* Bottom CTA (12px Rounded & Vertical) (Restored) */
