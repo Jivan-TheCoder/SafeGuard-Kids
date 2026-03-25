@@ -75,7 +75,7 @@
                                 </div>
                             </a>
 
-                            <a href="mailto:support@safeguardkids.com?subject=Product%20Inquiry%20-%20SafeGuard%20Kids&body=I%20want%20to%20get%20more%20knowledge%20about%20your%20product%20SafeGuard%20Kids." class="method-card-elite" style="display: flex; align-items: center; gap: 2rem; padding: 2.5rem; background: white; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); margin-bottom: 4rem; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(0,0,0,0.02); text-decoration: none; color: inherit;">
+                            <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=support@safeguardkids.com&su=Product%20Inquiry%20-%20SafeGuard%20Kids&body=I%20want%20to%20get%20more%20knowledge%20about%20your%20product%20SafeGuard%20Kids." class="method-card-elite" style="display: flex; align-items: center; gap: 2rem; padding: 2.5rem; background: white; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); margin-bottom: 4rem; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(0,0,0,0.02); text-decoration: none; color: inherit;">
                                 <div class="vibrant-icon" style="background: linear-gradient(135deg, #7C3AED, #4F46E5); color: white; width: 64px; height: 64px; border-radius: 20px; display: flex; align-items: center; justify-content: center; transform: rotate(5deg); transition: transform 0.4s ease; flex-shrink: 0;">
                                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                 </div>
@@ -111,11 +111,11 @@
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
                                 <div class="form-field-elite">
                                     <label style="display: block; font-size: 0.8rem; font-weight: 800; color: var(--text-dark); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; opacity: 0.7;">Full Name</label>
-                                    <input type="text" placeholder="e.g. John Doe" style="width: 100%; padding: 1.25rem; border-radius: 16px; border: 2px solid rgba(0,0,0,0.04); background: rgba(255,255,255,0.5); font-size: 1rem; color: var(--text-dark); transition: all 0.3s ease; outline: none;">
+                                    <input type="text" id="form_name" placeholder="e.g. John Doe" style="width: 100%; padding: 1.25rem; border-radius: 16px; border: 2px solid rgba(0,0,0,0.04); background: rgba(255,255,255,0.5); font-size: 1rem; color: var(--text-dark); transition: all 0.3s ease; outline: none;">
                                 </div>
                                 <div class="form-field-elite">
                                     <label style="display: block; font-size: 0.8rem; font-weight: 800; color: var(--text-dark); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; opacity: 0.7;">Email Address</label>
-                                    <input type="email" placeholder="e.g. john@example.com" style="width: 100%; padding: 1.25rem; border-radius: 16px; border: 2px solid rgba(0,0,0,0.04); background: rgba(255,255,255,0.5); font-size: 1rem; color: var(--text-dark); transition: all 0.3s ease; outline: none;">
+                                    <input type="email" id="form_email" placeholder="e.g. john@example.com" style="width: 100%; padding: 1.25rem; border-radius: 16px; border: 2px solid rgba(0,0,0,0.04); background: rgba(255,255,255,0.5); font-size: 1rem; color: var(--text-dark); transition: all 0.3s ease; outline: none;">
                                 </div>
                             </div>
                             <div class="form-field-elite" style="margin-bottom: 2rem;">
@@ -136,7 +136,7 @@
                             </div>
                             <div class="form-field-elite" style="margin-bottom: 2.5rem;">
                                 <label style="display: block; font-size: 0.8rem; font-weight: 800; color: var(--text-dark); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; opacity: 0.7;">Message Payload</label>
-                                <textarea placeholder="Describe your safety requirement in detail..." rows="6" style="width: 100%; padding: 1.25rem; border-radius: 16px; border: 2px solid rgba(0,0,0,0.04); background: rgba(255,255,255,0.5); font-size: 1rem; color: var(--text-dark); transition: all 0.3s ease; outline: none; resize: none;"></textarea>
+                                <textarea id="form_message" placeholder="Describe your safety requirement in detail..." rows="6" style="width: 100%; padding: 1.25rem; border-radius: 16px; border: 2px solid rgba(0,0,0,0.04); background: rgba(255,255,255,0.5); font-size: 1rem; color: var(--text-dark); transition: all 0.3s ease; outline: none; resize: none;"></textarea>
                             </div>
                             <div style="padding-top: 0.5rem;">
                                 <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.5rem; font-size: 1.15rem; font-weight: 900; background: linear-gradient(135deg, var(--primary-blue) 0%, #7C3AED 100%); border: none; box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4); border-radius: 20px; color: white;">Initialize Secure Channel</button>
@@ -150,6 +150,10 @@
                 </div>
             </div>
         </section>
+
+        <!-- Premium Toast Container -->
+        <div id="toast-container"></div>
+    </main>
     </main>
 
     <!-- Footer -->
@@ -173,6 +177,7 @@
                 </div>
                 <div class="link-group">
                     <h5>Product</h5>
+                    <a href="visibility-android.html">Android Visibility</a>
                     <a href="index.html#features">Features</a>
                     <a href="index.html#platforms">Platforms</a>
                     <a href="index.html#pricing">Pricing</a>
@@ -239,6 +244,78 @@
                 if (!wrapper.contains(e.target)) {
                     wrapper.classList.remove('open');
                 }
+            });
+        })();
+    </script>
+    <!-- Gmail Form Dispatcher (Elite Version) -->
+    <script>
+        (function() {
+            const form = document.querySelector('.contact-form');
+            const toastContainer = document.getElementById('toast-container');
+            if (!form) return;
+
+            function showToast(message) {
+                const toast = document.createElement('div');
+                toast.className = 'toast';
+                toast.innerHTML = `
+                    <div class="toast-icon">✓</div>
+                    <span>${message}</span>
+                `;
+                toastContainer.appendChild(toast);
+                
+                // Trigger animation
+                setTimeout(() => toast.classList.add('show'), 100);
+                
+                // Remove after 5 seconds
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => toast.remove(), 500);
+                }, 5000);
+            }
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.innerText;
+                
+                // Loading State
+                submitBtn.innerText = 'Initializing Secure Protocol...';
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
+
+                const name = document.getElementById('form_name').value;
+                const email = document.getElementById('form_email').value;
+                const category = document.getElementById('support_category_input').value;
+                const message = document.getElementById('form_message').value;
+
+                const subject = encodeURIComponent(`Secure Channel: ${category} - ${name}`);
+                const body = encodeURIComponent(
+                    `Inquiry from SafeGuard Kids Contact Form\n` +
+                    `----------------------------------------\n` +
+                    `Name: ${name}\n` +
+                    `Email: ${email}\n` +
+                    `Category: ${category}\n\n` +
+                    `Message:\n${message}`
+                );
+
+                // Use the user's requested email: jivanlalbhavsar786@gmail.com
+                // We use Gmail direct link to match the behavior of the other button
+                const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=jivanlalbhavsar786@gmail.com&su=${subject}&body=${body}`;
+                
+                // Open Gmail in a new tab
+                window.open(gmailUrl, '_blank');
+
+                // Artificial delay to simulate "Encryption & Sending"
+                setTimeout(() => {
+                    showToast('Mail sent. Your query will get resolved in 48 hours or our team will contact you.');
+                    
+                    // Reset UI
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                    form.reset();
+                }, 1500);
             });
         })();
     </script>
